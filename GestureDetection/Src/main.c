@@ -41,21 +41,21 @@
 #include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "Sensor.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c3;
+I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-#define APDS9960_ADDRESS 0x39
+//#define APDS9960_ADDRESS 0x39
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_I2C3_Init(void);
+static void MX_I2C1_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -75,7 +75,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	uint8_t data;
-	data = 0x27;
+//	uint8_t i;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -96,12 +96,35 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C3_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-//  HAL_I2C_Mem_Read(&hi2c3, APDS9960_ADDRESS, 0x92, 1, &data, 1, 100);
+//  data[0] = APDS9960_ENABLE;
+//  data[1] = 0x01;
 //
-//  if(data == 0x27){		//DEVICE_ID = 0xAB || 0x9C
-//	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
+//  if(HAL_I2C_Master_Transmit(&hi2c3,APDS9960_I2C_ADDRESS,data,2,10) == HAL_OK)
+//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+//
+//  data[0] = APDS9960_ENABLE;
+//  if(HAL_I2C_Master_Transmit(&hi2c3,APDS9960_I2C_ADDRESS,data,1,10) == HAL_OK)
+//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+//
+//  data[1] = 0x00;
+//  if(HAL_I2C_Master_Receive(&hi2c3,APDS9960_I2C_ADDRESS,&data[1],1,10) == HAL_OK)
+//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+//  if(data[1]==0x01)
+//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+
+//
+//  data = 0x01;
+//  HAL_I2C_Mem_Write(&hi2c3,APDS9960_I2C_ADDRESS,APDS9960_ENABLE,1,&data,1,100);
+  //  for(i=0;i<255;i++){
+//	  if(HAL_I2C_IsDeviceReady(&hi2c3,APDS9960_I2C_ADDRESS,5,100) == HAL_OK)
+//		  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+//  }
+//  HAL_I2C_Mem_Read(&hi2c3, APDS9960_I2C_ADDRESS, APDS9960_DEVICE_ID, 1, &data, 1, 100);
+//
+//  if(data == 0x01){		//DEVICE_ID = 0xAB || 0x9C
+//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 //  }
   /* USER CODE END 2 */
 
@@ -117,7 +140,10 @@ int main(void)
 	   * - zle ustawiona predkosc i2c
 	   * - nalezy najpierw aktywowac sensor (cos mu wyslac)
 	   * - funkcja i2c_HAL nie spelnia wymogow sensora (transakcja i2c)
-	   * - sensor zle zasilany*/
+	   * - sensor zle zasilany
+	   * -zla konfiguracja zegara w Cube*/
+	  if(HAL_I2C_IsDeviceReady(&hi2c1,APDS9960_I2C_ADDRESS,1,50) == HAL_OK)
+		  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
   }
   /* USER CODE END 3 */
 
@@ -187,20 +213,20 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* I2C3 init function */
-static void MX_I2C3_Init(void)
+/* I2C1 init function */
+static void MX_I2C1_Init(void)
 {
 
-  hi2c3.Instance = I2C3;
-  hi2c3.Init.ClockSpeed = 400000;
-  hi2c3.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c3.Init.OwnAddress1 = 0;
-  hi2c3.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c3.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c3.Init.OwnAddress2 = 0;
-  hi2c3.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c3.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c3) != HAL_OK)
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -221,9 +247,8 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);

@@ -27,7 +27,8 @@ Application/User/main.o: \
  D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
  D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
  D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
- D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+ D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ D:/MCUs/STM32F429/GestureDetection/GestureDetection/Inc/Sensor.h
 
 D:/MCUs/STM32F429/GestureDetection/GestureDetection/Inc/main.h:
 
@@ -84,3 +85,5 @@ D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver
 D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
 D:/MCUs/STM32F429/GestureDetection/GestureDetection/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+D:/MCUs/STM32F429/GestureDetection/GestureDetection/Inc/Sensor.h:

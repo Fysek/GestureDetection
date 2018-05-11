@@ -1,8 +1,6 @@
 #ifndef Sensor_h
 #define Sensor_h
 
-#include "MKL46Z4.h"
-
 #define APDS9960_I2C_ADDRESS (0x39<<1)	//adres 7 bitowy I2C
 #define APDS9960_DEVICE_ID  0x92	//adres rejestru zawierajacego id urzadzenia
 #define I2C_READ  1
