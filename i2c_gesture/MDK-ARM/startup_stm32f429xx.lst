@@ -903,11 +903,18 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=i2c_gesture\startup_stm32f429xx.d -oi2c_gesture\startup_stm32f4
-29xx.o -I.\RTE\_i2c_gesture -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
- -ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F
-4xx\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --prede
-fine="__UVISION_VERSION SETA 525" --predefine="_RTE_ SETA 1" --predefine="STM32
-F429xx SETA 1" --list=startup_stm32f429xx.lst startup_stm32f429xx.s
+29xx.o -ID:\MCUs\STM32F429\GestureDetection\i2c_gesture\MDK-ARM\RTE -ID:\Progra
+my\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -ID:\Programy\Keil_v5\ARM\PAC
+K\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefin
+e="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSIO
+N SETA 516" --predefine="_RTE_ SETA 1" --predefine="STM32F429xx SETA 1" --list=
+
+
+
+ARM Macro Assembler    Page 15 
+
+
+startup_stm32f429xx.lst startup_stm32f429xx.s
 
 
 
