@@ -109,8 +109,10 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x5AD9BD34)
-F (../Src/main.c)(0x5AFBECE9)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Drivers\BSP\STM32F429I-Discovery-I D:\MCUs\STM32F429\GestureDetection\i2c_gesture\MDK-ARM\RTE-I D:\Programy\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I D:\Programy\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o i2c_gesture\main.o --omf_browse i2c_gesture\main.crf --depend i2c_gesture\main.d)
+F (../Src/main.c)(0x5B080914)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Drivers\BSP\STM32F429I-Discovery-I D:\MCUs\STM32F429\GestureDetection\i2c_gesture\MDK-ARM\RTE-I D:\Programy\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I D:\Programy\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o i2c_gesture\main.o --omf_browse i2c_gesture\main.crf --depend i2c_gesture\main.d)
 I (../Inc/main.h)(0x5AFBE981)
+I (..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_lcd.h)(0x5AD9BD29)
+I (..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery.h)(0x5AD9BD29)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5AD9BD33)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5AFBE981)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5AD9BD34)
@@ -145,12 +147,49 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5AD9BD34)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x5AD9BD34)
-I (..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_lcd.h)(0x5AD9BD29)
-I (..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery.h)(0x5AD9BD29)
 I (..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_sdram.h)(0x5AD9BD29)
 I (..\Drivers\BSP\STM32F429I-Discovery\../../../Utilities/Fonts/fonts.h)(0x5AD9BDE9)
 I (..\Drivers\BSP\STM32F429I-Discovery\../Components/ili9341/ili9341.h)(0x5AD9BD27)
 I (..\Drivers\BSP\STM32F429I-Discovery\../Components/ili9341/../Common/lcd.h)(0x5AD9BD27)
+I (../Inc/Sensor.h)(0x5B080EBD)
+F (..\Src\Sensor.c)(0x5B0C4DD5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Drivers\BSP\STM32F429I-Discovery-I D:\MCUs\STM32F429\GestureDetection\i2c_gesture\MDK-ARM\RTE-I D:\Programy\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I D:\Programy\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o i2c_gesture\sensor.o --omf_browse i2c_gesture\sensor.crf --depend i2c_gesture\sensor.d)
+I (D:\Programy\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AF4A52)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5AD9BD33)
+I (../Inc/stm32f4xx_hal_conf.h)(0x5AFBE981)
+I (../Inc/main.h)(0x5AFBE981)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x5AD9BD33)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x5AD9BD2A)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h)(0x5AD9BD29)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x5AD9BD2E)
+I (D:\Programy\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF4A52)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5AD9BD2E)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5AD9BD2E)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5AD9BD2E)
+I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x5AD9BD2E)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x5AD9BD2A)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5AD9BD33)
+I (D:\Programy\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AF4A52)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x5AD9BD33)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5AD9BD34)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x5AD9BD34)
+I (../Inc/Sensor.h)(0x5B080EBD)
 F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c)(0x5AD9BD34)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Drivers\BSP\STM32F429I-Discovery-I D:\MCUs\STM32F429\GestureDetection\i2c_gesture\MDK-ARM\RTE-I D:\Programy\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I D:\Programy\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o i2c_gesture\stm32f4xx_hal_i2c.o --omf_browse i2c_gesture\stm32f4xx_hal_i2c.crf --depend i2c_gesture\stm32f4xx_hal_i2c.d)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5AD9BD33)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5AFBE981)

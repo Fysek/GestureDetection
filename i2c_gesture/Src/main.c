@@ -38,10 +38,10 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
 #include "stm32f429i_discovery_lcd.h"
+#include "Sensor.h"
 
 #define apds9960Address	0x72
 
@@ -80,6 +80,7 @@ static void MX_SPI5_Init(void);
 /* USER CODE BEGIN 0 */
 uint8_t i2cBuf[8];
 
+//TODO: - delay
 
 /* USER CODE END 0 */
 
@@ -91,7 +92,8 @@ uint8_t i2cBuf[8];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	//uint8_t temp;
+	
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -125,27 +127,32 @@ int main(void)
 	BSP_LCD_DisplayOn();
 	BSP_LCD_Clear(LCD_COLOR_WHITE);
 	
-//Scan I2C Address
-for(uint8_t i = 0; i <255;i++)
-{
-	if (HAL_I2C_IsDeviceReady(&hi2c3, i ,1 , 10) == HAL_OK)
-	{
-		HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
-		break;
-	}
-}
-//I2C Write
-	i2cBuf[0] = 0x80;		//Register address: 
-	i2cBuf[1] = 0x01;		//Data to write - power on
-	HAL_I2C_Master_Transmit(&hi2c3, apds9960Address, i2cBuf, 2, 10);
-//I2C Read
-	//Request to read from a register 
-	i2cBuf[0] = 28;
-	HAL_I2C_Master_Transmit(&hi2c3, apds9960Address, i2cBuf, 1, 10);
-	//Read data
-	i2cBuf[1] = 0x00;
-	HAL_I2C_Master_Receive(&hi2c3, apds9960Address, &i2cBuf[1], 1, 10);
 
+	//Is sensor ready
+	if (HAL_I2C_IsDeviceReady(&hi2c3, APDS9960_I2C_ADDRESS ,1 , 10) == HAL_OK)
+	{
+		//HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+		BSP_LCD_DisplayStringAtLine(1, (uint8_t*) "Device ready");
+	}
+
+//Read Device ID
+	HAL_I2C_Mem_Read(&hi2c3,apds9960Address,APDS9960_ID,1,i2cBuf,1,10);
+	
+	if(i2cBuf[0] == APDS9960_ID_1 || i2cBuf[0] == APDS9960_ID_2){
+		BSP_LCD_DisplayStringAtLine(2,(uint8_t*)"ID correct");
+	}
+	
+	i2cBuf[0] = 0;
+	
+	//set default parameters for gesture engine
+	//apdsInit(hi2c3);
+	
+	//Enable power
+	//enablePower(hi2c3);
+	
+	//enable gestrue engine
+	//enableGesture(hi2c3);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -157,7 +164,7 @@ for(uint8_t i = 0; i <255;i++)
 
   /* USER CODE BEGIN 3 */
 		BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-		BSP_LCD_DisplayStringAtLine(1,(uint8_t*) "Test");
+		BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"Test");
 		HAL_Delay(1000);
 		BSP_LCD_Clear(LCD_COLOR_WHITE);
   }

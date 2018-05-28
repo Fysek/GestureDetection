@@ -1,5 +1,7 @@
 i2c_gesture\main.o: ../Src/main.c
 i2c_gesture\main.o: ../Inc/main.h
+i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_lcd.h
+i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery.h
 i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 i2c_gesture\main.o: ../Inc/stm32f4xx_hal_conf.h
 i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -35,9 +37,8 @@ i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h
 i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 i2c_gesture\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_lcd.h
-i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery.h
 i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_sdram.h
 i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\../../../Utilities/Fonts/fonts.h
 i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\../Components/ili9341/ili9341.h
 i2c_gesture\main.o: ..\Drivers\BSP\STM32F429I-Discovery\../Components/ili9341/../Common/lcd.h
+i2c_gesture\main.o: ../Inc/Sensor.h

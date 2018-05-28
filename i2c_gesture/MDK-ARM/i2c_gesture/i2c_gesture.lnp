@@ -4,6 +4,7 @@
 "i2c_gesture\stm32f4xx_it.o"
 "i2c_gesture\stm32f4xx_hal_msp.o"
 "i2c_gesture\main.o"
+"i2c_gesture\sensor.o"
 "i2c_gesture\stm32f4xx_hal_i2c.o"
 "i2c_gesture\stm32f4xx_hal_pwr.o"
 "i2c_gesture\stm32f4xx_hal_dma_ex.o"

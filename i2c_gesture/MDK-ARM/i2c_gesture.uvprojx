@@ -451,6 +451,11 @@
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
             </File>
+            <File>
+              <FileName>Sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Sensor.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
