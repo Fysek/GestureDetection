@@ -2,6 +2,7 @@
 #define Sensor_h
 
 #include "stm32f4xx_hal.h"
+#include "stm32f429i_discovery_lcd.h"
 
 #define APDS9960_I2C_ADDRESS (0x39<<1)	//adres 7 bitowy I2C
 
@@ -256,4 +257,5 @@ uint8_t decodeGesture(void);
 /*Resets all the parameters in the gesture data member*/
 void resetGestureParameters(void);
 
+void handleGesture(I2C_HandleTypeDef hi2c);
 #endif

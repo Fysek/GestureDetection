@@ -294,7 +294,7 @@ uint8_t getMode(I2C_HandleTypeDef hi2c){
 	return enable_value;
 }
 
-int readGesture(I2C_HandleTypeDef hi2c)
+int readGesture(I2C_HandleTypeDef hi2c)		//FIXME:
 {
     uint8_t fifo_level = 0;
     uint8_t bytes_read = 0;
@@ -313,7 +313,7 @@ int readGesture(I2C_HandleTypeDef hi2c)
     while(1) {
     
         /* Wait some time to collect next batch of FIFO data */
-        //delay(FIFO_PAUSE_TIME);
+        HAL_Delay(FIFO_PAUSE_TIME);
         
         /* Get the contents of the STATUS register. Is data still valid? */
 				HAL_I2C_Mem_Read(&hi2c,APDS9960_I2C_ADDRESS,APDS9960_GSTATUS,1,&gstatus,1,10);
@@ -385,7 +385,7 @@ int readGesture(I2C_HandleTypeDef hi2c)
         } else {
     
             /* Determine best guessed gesture and clean up */
-            //delay(FIFO_PAUSE_TIME);
+            HAL_Delay(FIFO_PAUSE_TIME);
             decodeGesture();
             motion = gesture_motion_;
 //#if DEBUG
@@ -661,4 +661,32 @@ void resetGestureParameters(void)
     
     gesture_state_ = 0;
     gesture_motion_ = DIR_NONE;
+}
+
+void handleGesture(I2C_HandleTypeDef hi2c) {
+    if ( isGestureAvailable(hi2c) ) {
+			BSP_LCD_Clear(LCD_COLOR_WHITE);
+			switch ( readGesture(hi2c) ) {
+				case DIR_UP:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"UP");
+					break;
+				case DIR_DOWN:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"DOWN");
+					break;
+				case DIR_LEFT:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"LEFT");
+					break;
+				case DIR_RIGHT:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"RIGHT");
+					break;
+				case DIR_NEAR:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"NEAR");
+					break;
+				case DIR_FAR:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"FAR");
+					break;
+				default:
+					BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"NONE");
+    }
+  }
 }

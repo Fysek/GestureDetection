@@ -40,7 +40,7 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-#include "stm32f429i_discovery_lcd.h"
+//#include "stm32f429i_discovery_lcd.h"
 #include "Sensor.h"
 
 #define apds9960Address	0x72
@@ -145,13 +145,13 @@ int main(void)
 	i2cBuf[0] = 0;
 	
 	//set default parameters for gesture engine
-	//apdsInit(hi2c3);
+	apdsInit(hi2c3);
 	
 	//Enable power
-	//enablePower(hi2c3);
+	enablePower(hi2c3);
 	
 	//enable gestrue engine
-	//enableGesture(hi2c3);
+	enableGesture(hi2c3);
 	
   /* USER CODE END 2 */
 
@@ -163,10 +163,11 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-		BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-		BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"Test");
-		HAL_Delay(1000);
-		BSP_LCD_Clear(LCD_COLOR_WHITE);
+		handleGesture(hi2c3);
+//		BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+//		BSP_LCD_DisplayStringAtLine(3, (uint8_t*)"Test");
+//		HAL_Delay(1000);
+//		BSP_LCD_Clear(LCD_COLOR_WHITE);
   }
   /* USER CODE END 3 */
 
